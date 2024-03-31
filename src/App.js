@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import Dashboard from './components/Dashboard';
+import SetHabits from './components/SetHabits'
+import habitData from './data/habit-data.json';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ display: 'flex', flexDirection: 'column', width: '85%', margin: 'auto', marginTop: '40px'}}>
+      <SetHabits />
+      <Dashboard habits={habitData}/>
     </div>
   );
 }

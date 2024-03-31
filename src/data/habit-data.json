@@ -1,0 +1,134 @@
+{
+  "setHabits": [
+    "Drink 8 glasses of Water",
+    "Read a Book",
+    "Water your Plants",
+    "Workout for 45 minutes"
+  ],
+  "tracked": [
+    {
+      "date": "2023-01-31",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-30",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-29",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-28",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-27",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-26",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-25",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-24",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-23",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-22",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-21",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-20",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-19",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-18",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-17",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-16",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-15",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-14",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-13",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-12",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-11",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-10",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-09",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-08",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-07",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-06",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-05",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-04",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-03",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-02",
+      "habits": [true, true, true, false]
+    },
+    {
+      "date": "2023-01-01",
+      "habits": [true, true, true, false]
+    }
+  ]
+}
