@@ -9,6 +9,7 @@ import TimelineDot from '@mui/lab/TimelineDot';
 
 function HabitTimeline(props) {
   return (
+    <div>
     <Timeline position="alternate">
       { props.habits.tracked.map((habit, index) => {
         return (
@@ -28,6 +29,7 @@ function HabitTimeline(props) {
         );
       }) }
     </Timeline>
+    </div>
   )
 }
 

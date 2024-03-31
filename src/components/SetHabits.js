@@ -1,57 +1,72 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, TextField } from '@mui/material';
-// import { setLocalStorageItem, getLocalStorageItem } from './services/habit.service';
+import { setLocalStorageItem, getLocalStorageItem } from '../services/habit.service';
 
 function SetHabits() {
 
-  // const [ data, setData ] = useState('');
+  const [habitData, setHabitData] = useState({
+    habit_1: '',
+    habit_2: '',
+    habit_3: '',
+    habit_4: ''
+  });
 
-  // useEffect(() => {
-  //   const savedHabits = getLocalStorageItem('habitData');
-  //   if (savedHabits) {
-  //     setData(savedHabits);
-  //   }
-  // }, []);
+  // Loading the form data from localStorage on component mount
+  useEffect(() => {
+    const savedHabits = getLocalStorageItem('habitData');
+    if (savedHabits) {
+      setHabitData(savedHabits);
+    }
+  }, []);
 
-  const [habit_1, setHabit_1] = useState('');
-  const [habit_2, setHabit_2] = useState('');
-  const [habit_3, setHabit_3] = useState('');
-  const [habit_4, setHabit_4] = useState('');
-
-  const handleInputChange = (e, setInput) => {
-    setInput(e.target.value);
+  // Function to handle input changes and saving the habits to localStorage
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setHabitData(prevData => ({
+      ...prevData,
+      [name]: value
+    }))
+    console.log(habitData);
   }
 
-  const handleSave = () => {}
+  const handleSave = (e) => {
+    e.preventDefault();
+    setLocalStorageItem(habitData);
+  }
 
   return (
     <div>
-      <h1>Habit Tracker</h1>
-      <TextField 
-        label="Daily Habit 1"
-        value={habit_1}
-        onChange={(e) => handleInputChange(e, setHabit_1)}
-        style={{marginBottom: '25px'}}
-      />
-      <TextField 
-        label="Daily Habit 2"
-        value={habit_2}
-        onChange={(e) => handleInputChange(e, setHabit_2)}
-        style={{marginBottom: '25px'}}
-      />
-      <TextField 
-        label="Daily Habit 3"
-        value={habit_3}
-        onChange={(e) => handleInputChange(e, setHabit_3)}
-        style={{marginBottom: '25px'}}
-      />
-      <TextField 
-        label="Daily Habit 4"
-        value={habit_4}
-        onChange={(e) => handleInputChange(e, setHabit_4)}
-        style={{marginBottom: '25px'}}
-      />
-      <Button variant="contained" onClick={handleSave}>S A V E</Button>
+      <form onSubmit={handleSave}>
+        <TextField 
+          label="Daily Habit 1"
+          name="habit_1"
+          value={habitData.habit_1}
+          onChange={handleInputChange}
+          style={{marginBottom: '25px'}}
+        />
+        <TextField 
+          label="Daily Habit 2"
+          name="habit_2"
+          value={habitData.habit_2}
+          onChange={handleInputChange}
+          style={{marginBottom: '25px'}}
+        />
+        <TextField 
+          label="Daily Habit 3"
+          name="habit_3"
+          value={habitData.habit_3}
+          onChange={handleInputChange}
+          style={{marginBottom: '25px'}}
+        />
+        <TextField 
+          label="Daily Habit 4"
+          name="habit_4"
+          value={habitData.habit_4}
+          onChange={handleInputChange}
+          style={{marginBottom: '25px'}}
+        />
+        <Button type="submit" variant="contained">S A V E</Button>
+      </form>
     </div>
   );
 }

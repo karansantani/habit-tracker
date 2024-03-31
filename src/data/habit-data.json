@@ -1,10 +1,10 @@
 {
-  "setHabits": [
-    "Drink 8 glasses of Water",
-    "Read a Book",
-    "Water your Plants",
-    "Workout for 45 minutes"
-  ],
+  "setHabits": {
+    "habit_1": "",
+    "habit_2": "",
+    "habit_3": "",
+    "habit_4": ""
+  },
   "tracked": [
     {
       "date": "2023-01-31",
