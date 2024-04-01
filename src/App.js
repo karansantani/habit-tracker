@@ -11,8 +11,8 @@ import habitData from './data/habit-data.json';
 
 function App() {
 
-  // const [ habitData, setHabitData ] = useState({ setHabits: {}, tracked: [] });
   // Fetching data from localStorage on load
+  // const [ habitData, setHabitData ] = useState({ setHabits: {}, tracked: [] });
   // useEffect(() => {
   //   const fetchData = () => {
   //     const data = getLocalStorageItem('habitData');
