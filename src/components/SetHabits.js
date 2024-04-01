@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button, TextField } from '@mui/material';
-import { setLocalStorageItem, getLocalStorageItem } from '../services/habit.service';
 
-function SetHabits() {
+function SetHabits(props) {
 
   const [habitData, setHabitData] = useState({
     habit_1: '',
@@ -11,14 +10,6 @@ function SetHabits() {
     habit_4: ''
   });
 
-  // Loading the form data from localStorage on component mount
-  useEffect(() => {
-    const savedHabits = getLocalStorageItem('habitData');
-    if (savedHabits) {
-      setHabitData(savedHabits);
-    }
-  }, []);
-
   // Function to handle input changes and saving the habits to localStorage
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -26,17 +17,16 @@ function SetHabits() {
       ...prevData,
       [name]: value
     }))
-    console.log(habitData);
   }
 
   const handleSave = (e) => {
     e.preventDefault();
-    setLocalStorageItem(habitData);
+    props.trackHabits(habitData);
   }
 
   return (
     <div>
-      <form onSubmit={handleSave}>
+      <form onSubmit={handleSave} style={{ display: "flex", flexDirection:"column", marginBottom: "20px"}}>
         <TextField 
           label="Daily Habit 1"
           name="habit_1"
@@ -65,7 +55,7 @@ function SetHabits() {
           onChange={handleInputChange}
           style={{marginBottom: '25px'}}
         />
-        <Button type="submit" variant="contained">S A V E</Button>
+        <Button type="submit" color="success" variant="contained">S A V E</Button>
       </form>
     </div>
   );

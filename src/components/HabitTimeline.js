@@ -11,19 +11,19 @@ function HabitTimeline(props) {
   return (
     <div>
     <Timeline position="alternate">
-      { props.habits.tracked.map((habit, index) => {
+      { props.habits?.tracked?.map((habit, index) => {
         return (
           <TimelineItem key={index}>
             <TimelineSeparator>
-              <TimelineDot />
+              <TimelineDot color="success"/>
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
-              <h4>{ habit.date }</h4>
-              <Checkbox disabled checked={habit.habits[0]}/>
-              <Checkbox disabled checked={habit.habits[1]}/>
-              <Checkbox disabled checked={habit.habits[2]}/>
-              <Checkbox disabled checked={habit.habits[3]}/>
+              <h4 style={{ color:"#1A5E20" }}>{ habit.date }</h4>
+              <Checkbox style={{ color:"#1A5E20" }} disabled checked={habit.habits.includes('habit_1')}/>
+              <Checkbox style={{ color:"#1A5E20" }} disabled checked={habit.habits.includes('habit_2')}/>
+              <Checkbox style={{ color:"#1A5E20" }} disabled checked={habit.habits.includes('habit_3')}/>
+              <Checkbox style={{ color:"#1A5E20" }} disabled checked={habit.habits.includes('habit_4')}/>
             </TimelineContent>
           </TimelineItem>
         );

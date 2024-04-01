@@ -5,25 +5,25 @@ import 'react-calendar-heatmap/dist/styles.css';
 function HabitsHeatmap(props) {
 
   const today = new Date();
-  const randomValues = getRange(365).map(index => {
-    return {
-      date: shiftDate(today, -index),
-      count: getRandomInt(1,4)
-    };
-  });
+  // const randomValues = getRange(365).map(index => {
+  //   return {
+  //     date: shiftDate(today, -index),
+  //     count: getRandomInt(1,4)
+  //   };
+  // });
   const values = props.habits.tracked.map((item, index) => {
     return {
       date: shiftDate(today, -index),
-      count: item.habits.filter(Boolean)
+      count: item.habits.filter(item => item).length
     }
   })
 
   return (
     <div>
-      <CalendarHeatmap 
+      <CalendarHeatmap
         startDate={shiftDate(today, -365)}
         endDate={today}
-        values={randomValues}
+        values={values}
         classForValue={(value) => {
           if (!value) {
             return 'color-empty';
