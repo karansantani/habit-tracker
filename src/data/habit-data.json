@@ -24,7 +24,7 @@
     },
     {
       "date": "2023-01-27",
-      "habits": []
+      "habits": ["habit_3", "habit_2"]
     },
     {
       "date": "2023-01-26",
@@ -120,15 +120,15 @@
     },
     {
       "date": "2023-01-03",
-      "habits": []
+      "habits": ["habit_1","habit_2"]
     },
     {
       "date": "2023-01-02",
-      "habits": []
+      "habits": ["habit_1"]
     },
     {
       "date": "2023-01-01",
-      "habits": []
+      "habits": ["habit_1","habit_2","habit_3","habit_4"]
     }
   ]
 }

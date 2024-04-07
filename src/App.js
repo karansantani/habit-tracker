@@ -11,15 +11,12 @@ import habitData from './data/habit-data.json';
 
 function App() {
 
-  // Fetching data from localStorage on load
-  // const [ habitData, setHabitData ] = useState({ setHabits: {}, tracked: [] });
-  // useEffect(() => {
-  //   const fetchData = () => {
-  //     const data = getLocalStorageItem('habitData');
-  //     setHabitData(data);
-  //   }
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    const storedHabits = getLocalStorageItem('storedHabits');
+    if (storedHabits) {
+      setHabitObject(JSON.parse(storedHabits));
+    }
+  })
 
   // For showing and hiding the section which lets the user set habits to track
   const [showHabitForm, setShowHabitForm] = useState(false);
@@ -57,11 +54,11 @@ function App() {
     toggleNewHabitForm();
   }
   const trackHabits = (habits) => {
-    console.log(habits);
     setHabitObject({
       ...habitObject,
       setHabits: habits
     });
+    console.log(habitObject);
     setLocalStorageItem(habitObject);
     toggleHabitForm();
   }
@@ -71,11 +68,15 @@ function App() {
       <div style={{ display: 'flex', justifyContent: "space-between"}}>
         <h1 style={{ color:"#1A5E20" }}>
           Habit Tracker
-          { !newHabitForm && <Button color="success" size="small" variant="outlined" style={{ marginLeft: "25px", fontSize: "8px"}} onClick={toggleHabitForm}>Edit your habits</Button> }
+          { !newHabitForm && 
+            <Button color="success" size="small" variant="outlined" style={{ marginLeft: "25px", fontSize: "8px"}} onClick={toggleHabitForm}>Edit your habits</Button> 
+          }
         </h1>
-        { !showHabitForm && <Fab color="success" aria-label="log Today's habits">
-          <AddIcon color="white" onClick={toggleNewHabitForm}/>
-        </Fab> }
+        { !showHabitForm &&
+          <Fab color="success" aria-label="log Today's habits" onClick={toggleNewHabitForm}>
+            <AddIcon color="white"/>
+          </Fab> 
+        }
       </div>
       <div>
       { newHabitForm && <Today habits={habitData.setHabits} trackToday={trackToday}/> }
